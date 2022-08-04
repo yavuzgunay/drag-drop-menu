@@ -59,10 +59,10 @@
 <ng-template #tmplNode let-node="node">
   <div class="node-item menu-items-list" [attr.data-id]="node.itemId" [attr.id]="'node-'+node.itemId">
     <div class="item mb-3 py-3 px-4 rounded node-title" (click)="node.isExpanded=!node.isExpanded">
-      <i class="fas fa-grip-vertical fa-fw"></i>
+      <i class="fa fa-arrows-v fa-fw"></i>
       {{node?.children?.length ? (node.isExpanded?'-&nbsp;':'+') : '&nbsp;&nbsp;&nbsp;'}} &nbsp;&nbsp;&nbsp;
       <a (click)="selectItemToUpdate(node)">{{node.name}} - {{node.itemId}}</a>
-      <i class="fa fa-trash-alt fa-fw" (click)="deleteItem('delete', node.id)"></i>
+      <i class="fa fa-trash-o fa-fw" (click)="deleteItem('delete', node.id)"></i>
     </div>
     <div *ngIf="node.isExpanded && node?.children?.length" class="node-children"
          cdkDropList [cdkDropListData]="node?.children"

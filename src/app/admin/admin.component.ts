@@ -43,9 +43,6 @@ export class AdminComponent implements OnInit {
       this.prepareDragDrop(this.nodes);
     }
 
-    console.log(this.nodes);
-    console.log(this.nodeLookup);
-
   }
 
   selectItemToUpdate(item) {
