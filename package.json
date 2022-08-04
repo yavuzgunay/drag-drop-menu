@@ -7,8 +7,10 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "deploy": "npm run build --baseHref='/drag-drop-menu/' && gh-pages -d dist"
   },
+  "homepage": "https://tald7344.github.io/drag-drop-menu",
   "private": true,
   "dependencies": {
     "@angular/animations": "^9.1.13",
@@ -21,6 +23,7 @@
     "@angular/platform-browser-dynamic": "~9.1.4",
     "@angular/router": "~9.1.4",
     "bootstrap": "^4.6.0",
+    "gh-pages": "^4.0.0",
     "ngx-toastr": "^13.2.0",
     "rxjs": "~6.5.4",
     "tslib": "^1.10.0",
