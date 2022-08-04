@@ -23,7 +23,7 @@ import { LocationStrategy, HashLocationStrategy } from '@angular/common';
     DragDropModule,
   ],
   providers: [
-    // {provide: LocationStrategy, useClass: HashLocationStrategy}
+    {provide: LocationStrategy, useClass: HashLocationStrategy}
   ],
   exports: [],
   bootstrap: [AppComponent]
