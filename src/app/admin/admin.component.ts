@@ -1,5 +1,5 @@
 import {Component, DoCheck, ElementRef, Inject, OnChanges, OnInit, SimpleChanges, ViewChild} from '@angular/core';
-import {FormControl, FormGroup, Validators} from '@angular/forms';
+import {UntypedFormControl, UntypedFormGroup, Validators} from '@angular/forms';
 import {ToastrService} from 'ngx-toastr';
 import {DOCUMENT} from '@angular/common';
 import {demoData} from './model/data';
@@ -12,7 +12,7 @@ import {DropInfo} from './model/drop-info';
   styleUrls: ['./admin.component.scss']
 })
 export class AdminComponent implements OnInit {
-  menuItems: FormGroup;
+  menuItems: UntypedFormGroup;
   activeUpdate = false;
   nodes: TreeNode[] = demoData;
   nodesCached: boolean;
@@ -29,11 +29,11 @@ export class AdminComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.menuItems = new FormGroup({
-      id: new FormControl(''),
-      name: new FormControl('', Validators.required),
-      link: new FormControl('', Validators.required),
-      children: new FormControl('')
+    this.menuItems = new UntypedFormGroup({
+      id: new UntypedFormControl(''),
+      name: new UntypedFormControl('', Validators.required),
+      link: new UntypedFormControl('', Validators.required),
+      children: new UntypedFormControl('')
     });
     
     // get menu Content items from localstorage
@@ -51,12 +51,12 @@ export class AdminComponent implements OnInit {
   }
 
   fillFormField(itemMenu: TreeNode) {
-    this.menuItems = new FormGroup({
-      id: new FormControl(itemMenu.id),
-      itemId: new FormControl(itemMenu.itemId),
-      name: new FormControl(itemMenu.name, Validators.required),
-      link: new FormControl(itemMenu.link, Validators.required),
-      children: new FormControl(itemMenu.children)
+    this.menuItems = new UntypedFormGroup({
+      id: new UntypedFormControl(itemMenu.id),
+      itemId: new UntypedFormControl(itemMenu.itemId),
+      name: new UntypedFormControl(itemMenu.name, Validators.required),
+      link: new UntypedFormControl(itemMenu.link, Validators.required),
+      children: new UntypedFormControl(itemMenu.children)
     });
   }
 
